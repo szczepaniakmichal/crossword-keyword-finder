@@ -7,6 +7,12 @@ export class CrossWord {
 
     generateInputs() {
         const howManyInputs = this.getWordLength();
-        console.log(howManyInputs)
+        console.log(howManyInputs);
+        const generateInput = document.querySelector('.generate-inputs-word');
+
+        for (let i = 0; i < howManyInputs; i++) {
+            const input = document.createElement('input');
+            generateInput.appendChild(input);
+        }
     }
 }
