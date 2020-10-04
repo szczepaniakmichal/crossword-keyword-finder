@@ -5,14 +5,17 @@ export class CrossWord {
         if (!isNaN(value)) return value;
     }
 
-    generateInputs() {
+    generateInputs(parent) {
         const howManyInputs = this.getWordLength();
-        console.log(howManyInputs);
-        const generateInput = document.querySelector('.generate-inputs-word');
+        parent.textContent = '';
+        const label = document.createElement('p');
+        label.classList.add('generate-inputs-word__title');
+        label.textContent = 'Wprowadź litery które już znasz';
+        parent.appendChild(label);
 
         for (let i = 0; i < howManyInputs; i++) {
             const input = document.createElement('input');
-            generateInput.appendChild(input);
+            parent.appendChild(input);
         }
     }
 }
