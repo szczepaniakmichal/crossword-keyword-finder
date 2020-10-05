@@ -7,15 +7,21 @@ export class CrossWord {
 
     generateInputs(parent) {
         const howManyInputs = this.getWordLength();
-        parent.textContent = '';
-        const label = document.createElement('p');
-        label.classList.add('generate-inputs-word__title');
-        label.textContent = 'Wprowadź litery które już znasz';
-        parent.appendChild(label);
+        const title = parent.querySelector('.generate-inputs-word__title');
+        title.style.display = 'block';
+        const fields = parent.querySelector('.generate-inputs-word__field');
+        fields.textContent = '';
+
 
         for (let i = 0; i < howManyInputs; i++) {
+            const div = document.createElement('div');
+            const label = document.createElement('label');
             const input = document.createElement('input');
-            parent.appendChild(input);
+            div.classList.add('generate-inputs-word__word');
+            label.textContent = i + 1;
+            div.appendChild(label);
+            div.appendChild(input);
+            fields.appendChild(div);
         }
     }
 }
