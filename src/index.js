@@ -8,6 +8,8 @@ const crossWord = new CrossWord();
 
 btnGenerateInput.addEventListener('click', () => crossWord.generateInputs(generateInput));
 
+btnGenerateInput.click(); //this is need for faster test
+
 window.addEventListener('keyup', () => {
     crossWord.getWordLength() > 0 ? btnGenerateInput.disabled = false : btnGenerateInput.disabled = true;
 })

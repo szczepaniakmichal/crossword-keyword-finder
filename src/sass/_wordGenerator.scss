@@ -10,13 +10,20 @@ body {
     margin: 10px 0;
   }
 
-  .get-word-length, .generate-inputs-word {
+  .get-word-length {
     padding: 30px 0;
     margin: 0 auto;
+
+    &__generate-input {
+      width: 100%;
+      padding: 5px;
+    }
   }
 
   .generate-inputs-word {
     display: grid;
+    padding: 30px 0;
+    margin: 0 auto;
 
     input {
       width: 30px;
@@ -35,6 +42,10 @@ body {
       display: flex;
       flex-direction: column;
       text-align: center;
+    }
+
+    &__btn-find {
+      padding: 5px;
     }
   }
 }
